@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>learnup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/main.css" rel="stylesheet" media="all">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/app/app.js"></script>
+  <script src="/app/services/resty.js"></script>
+  <script src="/app/mainCtrl.js"></script>
+
+</head>
+<body ng-app="app">
+
+<header class="container" ng-controller="mainCtrl">
+
+<div class="row">
+  <div class="col-md-12">
+    <p class="lead">Learnup</p>
+  </div>
+</div>
+
+ <div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    
+    <h1>Make better daily decisions with data.</h1>
+
+    <ul class="lead">
+      <li>1. Search for your data (ex. peruvian chocolates).</li>
+      <li>2. Tag your data.</li>
+      <li>3. We create your campaign.</li>
+    </ul>
+
+    <form name="searchForm" ng-submit="formSubmit(searchForm)">
+      <div class="form-group">
+        <input 
+        type="text"
+        ng-model="searchForm.searchText" 
+        class="form-control" 
+        placeholder="find learning resources..."
+        required>
+      </div>
+
+      <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+
+    </form>
+    
+  </div>
+ </div>
+
+ <br />
+ <br />
+ 
+<ul ng-repeat="story in stories">
+  <li>{{story.webTitle}}</li>
+  <li>{{story.webPublicationDate}}</li>
+  <li><a href="{{story.webUrl}}" target="_blank">{{story.webUrl}}</a></li>
+  <li><img src="{{story.blocks.main.elements[0].assets[0].file}}" height="150px" width="250px"/></li>
+</ul>
+ 
+
+</header>
+
+</body>
+</html>
