@@ -16,4 +16,4 @@ jobs:
           script: |            
             cd test            
             cd learnu/www
-            sudo mv index.html /var/www/html/
+            sudo -n mv index.html /var/www/html/
