@@ -14,7 +14,6 @@ jobs:
           username: ${{secrets.SSH_USERNAME}}
 
           script: |            
-            cd test
-            git clone https://github.com/jirishus/learnu.git
+            cd test            
             cd learnu/www
-            mv index.html /var/www/html/
+            sudo mv index.html /var/www/html/
