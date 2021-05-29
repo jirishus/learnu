@@ -56,13 +56,18 @@
 
  <br />
  <br />
- 
+
+<h3 ng-if="resultsFound">Search Results</h3>
 <ul ng-repeat="story in stories">
   <li>{{story.webTitle}}</li>
   <li>{{story.webPublicationDate}}</li>
   <li><a href="{{story.webUrl}}" target="_blank">{{story.webUrl}}</a></li>
-  <li><img src="{{story.blocks.main.elements[0].assets[0].file}}" height="150px" width="250px"/></li>
+  <!-- <li><img src="{{story.blocks.main.elements[0].assets[0].file}}" height="150px" width="250px"/></li> -->
 </ul>
+
+<section class="loader" ng-if="isLoading">
+  <i class="fa fa-cogs fa-spinner fa-2x fa-spin"></i>
+</section>
  
 
 </header>

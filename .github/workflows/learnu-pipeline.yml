@@ -1,0 +1,7 @@
+name: learnu actions pipeline
+on: [pull_request]
+jobs:
+  learnu-actions-pipeline:
+     runs-on: ubuntu-latest
+     steps:
+       - run: echo "Test Job Complete"
