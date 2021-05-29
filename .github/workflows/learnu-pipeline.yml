@@ -17,4 +17,4 @@ jobs:
             cd test
             git clone https://github.com/jirishus/learnu.git
             cd learnu/www
-            mv index.html /var/www/html/ -y
+            mv index.html /var/www/html/
