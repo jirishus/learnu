@@ -16,4 +16,4 @@ jobs:
           script: |            
             cd test            
             cd learnu/www
-            $echo ${{secrets.PASSWORD}} | sudo -S cp index.html /var/www/html/index.html
+            echo ${{secrets.PASSWORD}} | sudo -S cp index.html /var/www/html/index.html
