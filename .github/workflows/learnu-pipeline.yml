@@ -1,7 +1,18 @@
 name: learnu actions pipeline
-on: [pull_request]
+on: 
+  push:
+    branches: [master]
 jobs:
-  learnu-actions-pipeline:
+  deploy:
      runs-on: ubuntu-latest
      steps:
-       - run: echo "Test Job Complete"
+       - name: Deploy Learnu App
+         uses: appleboy/ssh-action@v0.1.2
+         with:
+          host: ${{secrets.SSH_HOST}}
+          key: ${{secrets.SSH_KEY}}
+          username: ${{seecrets.SSH_USERNAME}}
+
+          script: |
+            mkdir test
+            cd test
