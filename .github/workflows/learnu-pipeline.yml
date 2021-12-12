@@ -8,6 +8,8 @@ jobs:
      steps:
        - name: Deploy Learnu App
          uses: appleboy/ssh-action@v0.1.2
+         env:
+            SSH_HOST: ${{secrets.SSH_HOST}}
          with:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
